@@ -25,6 +25,10 @@ services:
     - grafana-data:/var/lib/grafana
     ports:
     - 7000:3000
+    environment:
+    - GF_SERVER_ROOT_URL=/grafana
+    - GF_SERVER_SERVE_FROM_SUB_PATH=true
+    - GF_SERVER_DOMAIN=georayos.citedef.gob.ar
 
   prometheus:
     image: prom/prometheus:v2.28.1
